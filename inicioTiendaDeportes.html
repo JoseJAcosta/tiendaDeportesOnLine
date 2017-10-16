@@ -11,7 +11,7 @@
 
     <body>
 
-        <header>
+        <header id="header">
             <div id="logo">
                 <!-- TODO: aqui debería ir el logo de la tienda si lo tuviera -->
                 <img src="resources/imagenes/logo.png" />
@@ -33,14 +33,14 @@
                 <img src="resources/imagenes/iconUser.png"/>
                 <br/>
                 <!-- TODO: quizas sería mejor implementar los dos siguientes elementos como botones (luego un desplegable)-->
-                <a id="inicio" href="javascript:void(0);">Inicio</a>&nbsp|&nbsp
-                <a id="registro" href="javascript:void(0);">Registro</a>
+                <a id="inicio" href="javascript:void(0);" onclick="login();">Inicio</a>&nbsp|&nbsp
+                <a id="registro" href="javascript:void(0);" onclick="login();">Registro</a>
             </div>
 
             <hr/>
         </header>
 
-        <nav>
+        <nav id="menu">
             <ul>
                 <li>Deportes</li>
                 <li>Marcas</li>
@@ -52,14 +52,30 @@
         </nav>
 
 
-        <section id="seccionLogin" hidden="true">
+        <section id="seccionLogin" hidden>
 
             <form id="formLogin">
+                <label for="usuario">Usuario</label>
+                <input id="usuario" type="text" placeholder="usuario"/>
+                <br/>
+                <label for="contraseña">Contraseña</label>
+                <input id="contraseña" type="password" />
 
+                <br/>
+                <div id="registrarUsuario" hidden>
+                    <label for="repContraseña">Repetir contraseña</label>
+                    <input id="repContraseña" type="password"/>
+                    <br/>
 
+                    <!-- TODO: en el caso de registro se debe redirigir a otra página donde el usuario introducira algún dato adicional -->
+                </div>
+
+                <input id="submitFormLogin" type="submit" value="Aceptar" />
             </form>
 
         </section>
+
+
 
         <section id="seccionContenedores">
 
@@ -84,11 +100,33 @@
         </section>
 
 
-        <section id="seccionSeleccion" hidden="true">
+        <section id="seccionSeleccion" hidden>
 
             <form id="formSeleccion">
 
+                <input list= "deportes" name= "deporte">
+                <datalist id= "deportes">
+                    <option value= "Futbol">
+                    <option value= "Tenis">
+                    <option value= "Atletismo">
+                    <option value= "Natacion">
+                    <option value= "Montañismo">
+                    <option value= "...">
+                </datalist>
+                <br/>
+                <input list="marcas" name= "marca">
+                <datalist id= "marcas">
+                    <option value= "Futbol">
+                    <option value= "Tenis">
+                    <option value= "Atletismo">
+                    <option value= "Natacion">
+                    <option value= "Montañismo">
+                    <option value= "...">
+                </datalist>
+                <br/>
 
+
+                <input id="submitFormSeleccion" type="submit" value="Aceptar" />
             </form>
 
         </section>
