@@ -45,19 +45,24 @@
             </ul>
         </nav>
 
-        <section>
+        <section id="seccion">
 
-            <div id="imagenes">
+            <div id="contenedorImagenes">
                 <!-- TODO: desde Javascript permitir que la imagen visualizada rote a partir de un conjunto de ellas -->
                 <img id="img_material" src="resources/imagenes/material_1.jpg" />
             </div>
 
-            <div id="mapa">
+            <div id="contenedorMapa">
 
             </div>
 
-            <div id="video">
-
+            <div id="contenedorVideo">
+                <video controls poster="resources/media/intro.jpg" width="390px" height="240" preload="metadata">
+                    <source src="resources/media/intro.mp4" type="video/mp4">
+                    <source src="resources/media/intro.webm" type="video/webm">
+                    <p>Lo siento, su navegador no soporta video</p>
+                </video>
+                <h3 ><output id="tituloVideo" content=""></output></h3>
             </div>
 
         </section>
